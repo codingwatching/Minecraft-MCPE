@@ -7,8 +7,12 @@
 #include <crtdbg.h>
 */
 
-#include "client/renderer/gles.h"
-#include <EGL/egl.h>
+#ifdef OPENGL_GLES
+	#include "client/renderer/gles.h"
+	#include <EGL/egl.h>
+#else
+	#include "client/renderer/gl.h"
+#endif
 #define WIN32_LEAN_AND_MEAN 1
 #include <windows.h>
 #include <windowsx.h>
@@ -217,6 +221,17 @@ int main(void) {
 
 #ifndef STANDALONE_SERVER
 
+	HWND hwnd;
+	g_running = true;
+
+	// Platform init.
+	appContext.platform = new AppPlatform_win32();
+	platform(&hwnd, appContext.platform->getScreenWidth(), appContext.platform->getScreenHeight());
+	ShowWindow(hwnd, SW_SHOW);
+	SetForegroundWindow(hwnd);
+	SetFocus(hwnd);
+
+#ifdef OPENGL_GLES
 	EGLint aEGLAttributes[] = {
 		EGL_RED_SIZE,		8,
 		EGL_GREEN_SIZE,		8,
@@ -234,35 +249,55 @@ int main(void) {
 	EGLConfig m_eglConfig[1];
 	EGLint nConfigs;
 
-	HWND hwnd;
-	g_running = true;
-
-	// Platform init.
-	appContext.platform = new AppPlatform_win32();
-	platform(&hwnd, appContext.platform->getScreenWidth(), appContext.platform->getScreenHeight());
-	ShowWindow(hwnd, SW_SHOW);
-	SetForegroundWindow(hwnd);
-	SetFocus(hwnd);
-
-	// EGL init.
 	appContext.display = eglGetDisplay(GetDC(hwnd));
-	//m_eglDisplay = eglGetDisplay((EGLNativeDisplayType) EGL_DEFAULT_DISPLAY);
-
 	eglInitialize(appContext.display, NULL, NULL);
-
 	eglChooseConfig(appContext.display, aEGLAttributes, m_eglConfig, 1, &nConfigs);
 	printf("EGLConfig = %p\n", m_eglConfig[0]);
 
 	appContext.surface = eglCreateWindowSurface(appContext.display, m_eglConfig[0], (NativeWindowType)hwnd, 0);
 	printf("EGLSurface = %p\n", appContext.surface);
 
-	appContext.context = eglCreateContext(appContext.display, m_eglConfig[0], EGL_NO_CONTEXT, NULL);//aEGLContextAttributes);
+	appContext.context = eglCreateContext(appContext.display, m_eglConfig[0], EGL_NO_CONTEXT, NULL);
 	printf("EGLContext = %p\n", appContext.context);
 	if (!appContext.context) {
 		printf("EGL error: %d\n", eglGetError());
 	}
 
 	eglMakeCurrent(appContext.display, appContext.surface, appContext.surface, appContext.context);
+#else
+	HDC hdc = GetDC(hwnd);
+	
+	PIXELFORMATDESCRIPTOR pfd = {
+		sizeof(PIXELFORMATDESCRIPTOR),
+		1,
+		PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER,
+		PFD_TYPE_RGBA,
+		32,
+		0, 0, 0, 0, 0, 0,
+		0,
+		0,
+		0,
+		0, 0, 0, 0,
+		16,
+		0,
+		0,
+		PFD_MAIN_PLANE,
+		0,
+		0, 0, 0
+	};
+	
+	int iFormat = ChoosePixelFormat(hdc, &pfd);
+	SetPixelFormat(hdc, iFormat, &pfd);
+	
+	HGLRC hglrc = wglCreateContext(hdc);
+	wglMakeCurrent(hdc, hglrc);
+	
+	appContext.display = (EGLDisplay)hdc;
+	appContext.surface = (EGLSurface)hwnd;
+	appContext.context = (EGLContext)hglrc;
+	
+	printf("WGL Context created\n");
+#endif
 	
 	glInit();
 
@@ -307,10 +342,16 @@ int main(void) {
 	
 #ifndef STANDALONE_SERVER
 	// Exit.
+#ifdef OPENGL_GLES
 	eglMakeCurrent(appContext.display, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
 	eglDestroyContext(appContext.display, appContext.context);
 	eglDestroySurface(appContext.display, appContext.surface);
 	eglTerminate(appContext.display);
+#else
+	wglMakeCurrent((HDC)appContext.display, NULL);
+	wglDeleteContext((HGLRC)appContext.context);
+	ReleaseDC((HWND)appContext.surface, (HDC)appContext.display);
+#endif
 #endif
 
 	return 0;

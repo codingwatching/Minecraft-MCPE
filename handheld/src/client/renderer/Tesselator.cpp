@@ -49,7 +49,11 @@ Tesselator::~Tesselator()
 void Tesselator::init()
 {
 #ifndef STANDALONE_SERVER
+#ifdef OPENGL_GLES
 	glGenBuffers2(vboCounts, vboIds);
+#else
+	glGenBuffers(vboCounts, vboIds);
+#endif
 #endif
 }
 

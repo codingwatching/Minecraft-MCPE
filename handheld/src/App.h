@@ -60,8 +60,14 @@ public:
     
 	void swapBuffers() {
 #ifndef NO_EGL
-		if (_context.doRender)
+		if (_context.doRender) {
+#ifdef OPENGL_GLES
 			eglSwapBuffers(_context.display, _context.surface);
+#else
+			// For desktop OpenGL, use SwapBuffers with HDC
+			SwapBuffers((HDC)_context.display);
+#endif
+		}
 #endif
 	}
 
