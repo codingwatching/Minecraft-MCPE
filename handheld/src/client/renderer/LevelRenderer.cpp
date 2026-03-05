@@ -77,12 +77,7 @@ LevelRenderer::LevelRenderer( Minecraft* mc)
 #else
 	int maxChunksWidth = 1024 / CHUNK_SIZE;
 	numListsOrBuffers = maxChunksWidth * maxChunksWidth * maxChunksWidth * 3;
-#ifdef USE_VBO
-	chunkBuffers = new GLuint[numListsOrBuffers];
-	glGenBuffers2(numListsOrBuffers, chunkBuffers);
-#else
 	chunkLists = glGenLists(numListsOrBuffers);
-#endif
 #endif
 }
 
@@ -98,12 +93,7 @@ LevelRenderer::~LevelRenderer()
 	glDeleteBuffers(1, &skyBuffer);
 	delete[] chunkBuffers;
 #else
-#ifdef USE_VBO
-	glDeleteBuffers(numListsOrBuffers, chunkBuffers);
-	delete[] chunkBuffers;
-#else
 	glDeleteLists(numListsOrBuffers, chunkLists);
-#endif
 #endif
 }
 
@@ -1246,11 +1236,7 @@ void LevelRenderer::onGraphicsReset()
 #ifdef OPENGL_ES
 	glGenBuffers2(numListsOrBuffers, chunkBuffers);
 #else
-#ifdef USE_VBO
-	glGenBuffers2(numListsOrBuffers, chunkBuffers);
-#else
 	chunkLists = glGenLists(numListsOrBuffers);
-#endif
 #endif
 
 	// Rebuild
