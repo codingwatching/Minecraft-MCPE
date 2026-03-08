@@ -1,0 +1,4 @@
+./gradlew assembleArmRelease
+./gradlew assembleArm64Release
+./gradlew assembleX86Release
+./gradlew assembleAllRelease
