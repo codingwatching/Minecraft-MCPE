@@ -93,6 +93,7 @@ private:
 	RakNet::RakPeerInterface* rakPeer;
 
 	RakNet::RakNetGUID serverGuid;
+	std::string currentLevelId;
 
 	BlockUpdateList	bufferedBlockUpdates;
 	int	requestNextChunkPosition;

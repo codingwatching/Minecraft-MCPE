@@ -98,6 +98,7 @@ public:
 
 	void prepareLevel(const std::string& message);
 
+	void cleanupLastJoinedServerFolders();
 	void leaveGame(bool renameLevel = false);
 
 	int getProgressStatusId();

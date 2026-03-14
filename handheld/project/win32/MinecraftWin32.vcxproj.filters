@@ -1214,6 +1214,12 @@
     <ClCompile Include="..\..\src\client\gui\components\Slider.cpp">
       <Filter>Source Files\client\gui\components</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\server\ArgumentsSettings.cpp">
+      <Filter>Source Files\server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\server\CreatorLevel.cpp">
+      <Filter>Source Files\server</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\App.h">

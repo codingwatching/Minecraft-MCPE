@@ -311,6 +311,33 @@ void Minecraft::setLevel(Level* level, const std::string& message /* ="" */, Loc
 	this->_running = true;
 }
 
+void Minecraft::cleanupLastJoinedServerFolders()
+{
+	LOGI("Cleaning up LastJoinedServer folder\n");
+	
+	LevelStorageSource* storageSource = getLevelSource();
+	if (!storageSource) {
+		LOGI("ERROR: Could not get storage source for cleanup\n");
+		return;
+	}
+	
+	LevelSummaryList levels;
+	storageSource->getLevelList(levels);
+	
+	int deletedCount = 0;
+	for (unsigned int i = 0; i < levels.size(); ++i) {
+		const LevelSummary& level = levels[i];
+		
+		if (level.id.find("_LastJoinedServer") != std::string::npos) {
+			LOGI("Deleting _LastJoinedServer world folder: %s\n", level.id.c_str());
+			storageSource->deleteLevel(level.id);
+			deletedCount++;
+		}
+	}
+	
+	LOGI(" Cleanup completed. \n", deletedCount);
+}
+
 void Minecraft::leaveGame(bool renameLevel /*=false*/)
 {
     if (isGeneratingLevel || !_hasSignaledGeneratingLevelFinished)
@@ -324,6 +351,9 @@ void Minecraft::leaveGame(bool renameLevel /*=false*/)
 		// If server or wanting to save level as client, save all unsaved chunks!
 		level->getChunkSource()->saveAll(true);
 	}
+
+	// Clean up all _LastJoinedServer world folders
+	cleanupLastJoinedServerFolders();
 
 	LOGI("Clearing levels\n");
 

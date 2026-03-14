@@ -4,7 +4,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
+#ifdef _WIN32
+#define WIN32_LEAN_AND_MEAN
+#include <winsock2.h>
+#include <windows.h>
+#define sleep(x) Sleep(x * 1000)
+#else
 #include <unistd.h>
+#endif
 
 #include "world/level/LevelSettings.h"
 #include "world/level/Level.h"
@@ -53,9 +60,16 @@ int main(int numArguments, char* pszArgs[]) {
 	((MAIN_CLASS*)g_app)->externalCacheStoragePath = aSettings.getCachePath();
 
 	g_app->init(appContext);
-	LevelSettings settings(getEpochTimeS(), GameType::Creative);
+	LevelSettings settings(getEpochTimeS(), GameType::Survival);
 	float startTime = getTimeS();
 	((MAIN_CLASS*)g_app)->selectLevel(aSettings.getLevelDir(), aSettings.getLevelName(),  settings);
+
+	LOGI("Waiting for level generation to complete...\n");
+	while(!((MAIN_CLASS*)g_app)->isLevelGenerated()) {
+		((MAIN_CLASS*)g_app)->update();
+	}
+	LOGI("Level generation completed, starting server...\n");
+	
 	((MAIN_CLASS*)g_app)->hostMultiplayer(aSettings.getPort());
 
 	std::cout << "Level has been generated in " << getTimeS() - startTime << std::endl;

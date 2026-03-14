@@ -1,0 +1,854 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug DEMO|ARM">
+      <Configuration>Debug DEMO</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug DEMO|Win32">
+      <Configuration>Debug DEMO</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug DEMO|x64">
+      <Configuration>Debug DEMO</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Server|ARM">
+      <Configuration>Server</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Server|Win32">
+      <Configuration>Server</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Server|x64">
+      <Configuration>Server</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\AppPlatform_win32.cpp" />
+    <ClCompile Include="..\..\src\client\gamemode\CreativeMode.cpp" />
+    <ClCompile Include="..\..\src\client\gamemode\CreatorMode.cpp" />
+    <ClCompile Include="..\..\src\client\gamemode\GameMode.cpp" />
+    <ClCompile Include="..\..\src\client\gamemode\SurvivalMode.cpp" />
+    <ClCompile Include="..\..\src\client\IConfigListener.cpp" />
+    <ClCompile Include="..\..\src\client\Minecraft.cpp" />
+    <ClCompile Include="..\..\src\client\Options.cpp" />
+    <ClCompile Include="..\..\src\client\OptionsFile.cpp" />
+    <ClCompile Include="..\..\src\client\OptionStrings.cpp" />
+    <ClCompile Include="..\..\src\client\player\input\KeyboardInput.cpp" />
+    <ClCompile Include="..\..\src\client\player\LocalPlayer.cpp" />
+    <ClCompile Include="..\..\src\client\player\RemotePlayer.cpp" />
+    <ClCompile Include="..\..\src\locale\I18n.cpp" />
+    <ClCompile Include="..\..\src\main_dedicated.cpp" />
+    <ClCompile Include="..\..\src\nbt\Tag.cpp" />
+    <ClCompile Include="..\..\src\network\ClientSideNetworkHandler.cpp" />
+    <ClCompile Include="..\..\src\network\command\CommandServer.cpp" />
+    <ClCompile Include="..\..\src\network\NATPunchHandler.cpp" />
+    <ClCompile Include="..\..\src\network\NetEventCallback.cpp" />
+    <ClCompile Include="..\..\src\network\Packet.cpp" />
+    <ClCompile Include="..\..\src\network\PHPDirectoryServer2.cpp" />
+    <ClCompile Include="..\..\src\network\RakNetInstance.cpp" />
+    <ClCompile Include="..\..\src\network\ServerSideNetworkHandler.cpp" />
+    <ClCompile Include="..\..\src\NinecraftApp.cpp" />
+    <ClCompile Include="..\..\src\Performance.cpp" />
+    <ClCompile Include="..\..\src\platform\CThread.cpp" />
+    <ClCompile Include="..\..\src\platform\input\Controller.cpp" />
+    <ClCompile Include="..\..\src\platform\input\Keyboard.cpp" />
+    <ClCompile Include="..\..\src\platform\input\Mouse.cpp" />
+    <ClCompile Include="..\..\src\platform\input\Multitouch.cpp" />
+    <ClCompile Include="..\..\src\platform\time.cpp" />
+    <ClCompile Include="..\..\src\server\ArgumentsSettings.cpp" />
+    <ClCompile Include="..\..\src\server\CreatorLevel.cpp" />
+    <ClCompile Include="..\..\src\server\ServerLevel.cpp" />
+    <ClCompile Include="..\..\src\server\ServerPlayer.cpp" />
+    <ClCompile Include="..\..\src\SharedConstants.cpp" />
+    <ClCompile Include="..\..\src\util\DataIO.cpp" />
+    <ClCompile Include="..\..\src\util\Mth.cpp" />
+    <ClCompile Include="..\..\src\util\PerfTimer.cpp" />
+    <ClCompile Include="..\..\src\util\StringUtils.cpp" />
+    <ClCompile Include="..\..\src\world\Direction.cpp" />
+    <ClCompile Include="..\..\src\world\entity\AgableMob.cpp" />
+    <ClCompile Include="..\..\src\world\entity\ai\control\MoveControl.cpp" />
+    <ClCompile Include="..\..\src\world\entity\animal\Animal.cpp" />
+    <ClCompile Include="..\..\src\world\entity\animal\Chicken.cpp" />
+    <ClCompile Include="..\..\src\world\entity\animal\Cow.cpp" />
+    <ClCompile Include="..\..\src\world\entity\animal\Pig.cpp" />
+    <ClCompile Include="..\..\src\world\entity\animal\Sheep.cpp" />
+    <ClCompile Include="..\..\src\world\entity\animal\WaterAnimal.cpp" />
+    <ClCompile Include="..\..\src\world\entity\Entity.cpp" />
+    <ClCompile Include="..\..\src\world\entity\EntityFactory.cpp" />
+    <ClCompile Include="..\..\src\world\entity\FlyingMob.cpp" />
+    <ClCompile Include="..\..\src\world\entity\HangingEntity.cpp" />
+    <ClCompile Include="..\..\src\world\entity\item\FallingTile.cpp" />
+    <ClCompile Include="..\..\src\world\entity\item\ItemEntity.cpp" />
+    <ClCompile Include="..\..\src\world\entity\item\PrimedTnt.cpp" />
+    <ClCompile Include="..\..\src\world\entity\item\TripodCamera.cpp" />
+    <ClCompile Include="..\..\src\world\entity\Mob.cpp" />
+    <ClCompile Include="..\..\src\world\entity\MobCategory.cpp" />
+    <ClCompile Include="..\..\src\world\entity\monster\Creeper.cpp" />
+    <ClCompile Include="..\..\src\world\entity\monster\Monster.cpp" />
+    <ClCompile Include="..\..\src\world\entity\monster\PigZombie.cpp" />
+    <ClCompile Include="..\..\src\world\entity\monster\Skeleton.cpp" />
+    <ClCompile Include="..\..\src\world\entity\monster\Spider.cpp" />
+    <ClCompile Include="..\..\src\world\entity\monster\Zombie.cpp" />
+    <ClCompile Include="..\..\src\world\entity\Motive.cpp" />
+    <ClCompile Include="..\..\src\world\entity\Painting.cpp" />
+    <ClCompile Include="..\..\src\world\entity\PathfinderMob.cpp" />
+    <ClCompile Include="..\..\src\world\entity\player\Inventory.cpp" />
+    <ClCompile Include="..\..\src\world\entity\player\Player.cpp" />
+    <ClCompile Include="..\..\src\world\entity\projectile\Arrow.cpp" />
+    <ClCompile Include="..\..\src\world\entity\projectile\Throwable.cpp" />
+    <ClCompile Include="..\..\src\world\entity\SynchedEntityData.cpp" />
+    <ClCompile Include="..\..\src\world\food\SimpleFoodData.cpp" />
+    <ClCompile Include="..\..\src\world\inventory\BaseContainerMenu.cpp" />
+    <ClCompile Include="..\..\src\world\inventory\ContainerMenu.cpp" />
+    <ClCompile Include="..\..\src\world\inventory\FillingContainer.cpp" />
+    <ClCompile Include="..\..\src\world\inventory\FurnaceMenu.cpp" />
+    <ClCompile Include="..\..\src\world\item\ArmorItem.cpp" />
+    <ClCompile Include="..\..\src\world\item\BedItem.cpp" />
+    <ClCompile Include="..\..\src\world\item\crafting\ArmorRecipes.cpp" />
+    <ClCompile Include="..\..\src\world\item\crafting\FurnaceRecipes.cpp" />
+    <ClCompile Include="..\..\src\world\item\crafting\OreRecipes.cpp" />
+    <ClCompile Include="..\..\src\world\item\crafting\Recipe.cpp" />
+    <ClCompile Include="..\..\src\world\item\crafting\Recipes.cpp" />
+    <ClCompile Include="..\..\src\world\item\crafting\StructureRecipes.cpp" />
+    <ClCompile Include="..\..\src\world\item\crafting\ToolRecipes.cpp" />
+    <ClCompile Include="..\..\src\world\item\crafting\WeaponRecipes.cpp" />
+    <ClCompile Include="..\..\src\world\item\DyePowderItem.cpp" />
+    <ClCompile Include="..\..\src\world\item\HangingEntityItem.cpp" />
+    <ClCompile Include="..\..\src\world\item\HatchetItem.cpp" />
+    <ClCompile Include="..\..\src\world\item\HoeItem.cpp" />
+    <ClCompile Include="..\..\src\world\item\Item.cpp" />
+    <ClCompile Include="..\..\src\world\item\ItemInstance.cpp" />
+    <ClCompile Include="..\..\src\world\item\PickaxeItem.cpp" />
+    <ClCompile Include="..\..\src\world\item\ShovelItem.cpp" />
+    <ClCompile Include="..\..\src\world\level\biome\Biome.cpp" />
+    <ClCompile Include="..\..\src\world\level\biome\BiomeSource.cpp" />
+    <ClCompile Include="..\..\src\world\level\chunk\LevelChunk.cpp" />
+    <ClCompile Include="..\..\src\world\level\dimension\Dimension.cpp" />
+    <ClCompile Include="..\..\src\world\level\Explosion.cpp" />
+    <ClCompile Include="..\..\src\world\level\Level.cpp" />
+    <ClCompile Include="..\..\src\world\level\levelgen\CanyonFeature.cpp" />
+    <ClCompile Include="..\..\src\world\level\levelgen\DungeonFeature.cpp" />
+    <ClCompile Include="..\..\src\world\level\levelgen\feature\Feature.cpp" />
+    <ClCompile Include="..\..\src\world\level\levelgen\LargeCaveFeature.cpp" />
+    <ClCompile Include="..\..\src\world\level\levelgen\LargeFeature.cpp" />
+    <ClCompile Include="..\..\src\world\level\levelgen\RandomLevelSource.cpp" />
+    <ClCompile Include="..\..\src\world\level\levelgen\synth\ImprovedNoise.cpp" />
+    <ClCompile Include="..\..\src\world\level\levelgen\synth\PerlinNoise.cpp" />
+    <ClCompile Include="..\..\src\world\level\levelgen\synth\Synth.cpp" />
+    <ClCompile Include="..\..\src\world\level\LightLayer.cpp" />
+    <ClCompile Include="..\..\src\world\level\LightUpdate.cpp" />
+    <ClCompile Include="..\..\src\world\level\material\Material.cpp" />
+    <ClCompile Include="..\..\src\world\level\MobSpawner.cpp" />
+    <ClCompile Include="..\..\src\world\level\pathfinder\Path.cpp" />
+    <ClCompile Include="..\..\src\world\level\Region.cpp" />
+    <ClCompile Include="..\..\src\world\level\storage\ExternalFileLevelStorage.cpp" />
+    <ClCompile Include="..\..\src\world\level\storage\ExternalFileLevelStorageSource.cpp" />
+    <ClCompile Include="..\..\src\world\level\storage\FolderMethods.cpp" />
+    <ClCompile Include="..\..\src\world\level\storage\LevelData.cpp" />
+    <ClCompile Include="..\..\src\world\level\storage\LevelStorageSource.cpp" />
+    <ClCompile Include="..\..\src\world\level\storage\RegionFile.cpp" />
+    <ClCompile Include="..\..\src\world\level\TickNextTickData.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\BedTile.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\ChestTile.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\CropTile.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\DoorTile.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\EntityTile.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\entity\ChestTileEntity.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\entity\FurnaceTileEntity.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\entity\NetherReactorTileEntity.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\entity\SignTileEntity.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\entity\TileEntity.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\FurnaceTile.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\GrassTile.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\HeavyTile.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\LightGemTile.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\MelonTile.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\Mushroom.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\NetherReactor.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\NetherReactorPattern.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\SandTile.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\StairTile.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\StemTile.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\StoneSlabTile.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\TallGrass.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\Tile.cpp" />
+    <ClCompile Include="..\..\src\world\level\tile\TrapDoorTile.cpp" />
+    <ClCompile Include="..\..\src\world\phys\HitResult.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\BitStream.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\CCRakNetSlidingWindow.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\CCRakNetUDT.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\CheckSum.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\CloudClient.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\CloudCommon.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\CloudServer.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\CommandParserInterface.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\ConnectionGraph2.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\ConsoleServer.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\DataCompressor.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\DirectoryDeltaTransfer.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\DS_BytePool.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\DS_ByteQueue.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\DS_HuffmanEncodingTree.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\DS_Table.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\DynDNS.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\EmailSender.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\EncodeClassName.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\EpochTimeToString.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\FileList.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\FileListTransfer.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\FileOperations.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\FormatString.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\FullyConnectedMesh2.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\Getche.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\Gets.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\GetTime.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\gettimeofday.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\GridSectorizer.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\HTTPConnection.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\IncrementalReadInterface.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\Itoa.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\LinuxStrings.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\LocklessTypes.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\LogCommandParser.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\MessageFilter.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\NatPunchthroughClient.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\NatPunchthroughServer.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\NatTypeDetectionClient.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\NatTypeDetectionCommon.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\NatTypeDetectionServer.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\NetworkIDManager.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\NetworkIDObject.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\PacketConsoleLogger.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\PacketFileLogger.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\PacketizedTCP.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\PacketLogger.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\PacketOutputWindowLogger.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\PluginInterface2.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\Rackspace.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\RakMemoryOverride.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\RakNetCommandParser.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\RakNetSocket.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\RakNetStatistics.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\RakNetTransport2.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\RakNetTypes.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\RakPeer.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\RakSleep.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\RakString.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\RakThread.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\RakWString.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\Rand.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\rdlmalloc.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\ReadyEvent.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\ReliabilityLayer.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\ReplicaManager3.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\Router2.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\RPC4Plugin.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\SecureHandshake.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\SendToThread.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\SHA1.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\SignaledEvent.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\SimpleMutex.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\SocketLayer.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\StringCompressor.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\StringTable.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\SuperFastHash.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\TableSerializer.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\TCPInterface.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\TeamBalancer.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\TelnetTransport.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\ThreadsafePacketLogger.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\TwoWayAuthentication.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\UDPForwarder.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\UDPProxyClient.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\UDPProxyCoordinator.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\UDPProxyServer.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\VariableDeltaSerializer.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\VariableListDeltaTracker.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\VariadicSQLParser.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\VitaIncludes.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\WSAStartupSingleton.cpp" />
+    <ClCompile Include="..\lib_projects\raknet\jni\RaknetSources\_FindFirst.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\platform\input\Controller.h" />
+    <ClInclude Include="..\..\src\platform\input\Keyboard.h" />
+    <ClInclude Include="..\..\src\platform\input\Mouse.h" />
+    <ClInclude Include="..\..\src\platform\input\Multitouch.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\AutopatcherPatchContext.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\AutopatcherRepositoryInterface.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\BitStream.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\CCRakNetSlidingWindow.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\CCRakNetUDT.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\CheckSum.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\CloudClient.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\CloudCommon.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\CloudServer.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\CommandParserInterface.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\ConnectionGraph2.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\ConsoleServer.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DataCompressor.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DirectoryDeltaTransfer.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_BinarySearchTree.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_BPlusTree.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_BytePool.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_ByteQueue.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_Hash.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_Heap.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_HuffmanEncodingTree.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_HuffmanEncodingTreeFactory.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_HuffmanEncodingTreeNode.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_LinkedList.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_List.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_Map.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_MemoryPool.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_Multilist.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_OrderedChannelHeap.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_OrderedList.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_Queue.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_QueueLinkedList.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_RangeList.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_Table.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_ThreadsafeAllocatingQueue.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_Tree.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DS_WeightedGraph.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\DynDNS.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\EmailSender.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\EpochTimeToString.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\Export.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\FileList.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\FileListNodeContext.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\FileListTransfer.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\FileListTransferCBInterface.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\FileOperations.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\FormatString.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\FullyConnectedMesh2.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\Getche.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\Gets.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\GetTime.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\gettimeofday.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\GridSectorizer.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\HTTPConnection.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\IncrementalReadInterface.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\InternalPacket.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\Itoa.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\Kbhit.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\LinuxStrings.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\LocklessTypes.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\LogCommandParser.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\MessageFilter.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\MessageIdentifiers.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\MTUSize.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\NativeFeatureIncludes.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\NativeFeatureIncludesOverrides.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\NativeTypes.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\NatPunchthroughClient.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\NatPunchthroughServer.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\NatTypeDetectionClient.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\NatTypeDetectionCommon.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\NatTypeDetectionServer.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\NetworkIDManager.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\NetworkIDObject.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\PacketConsoleLogger.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\PacketFileLogger.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\PacketizedTCP.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\PacketLogger.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\PacketOutputWindowLogger.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\PacketPool.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\PacketPriority.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\PluginInterface2.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\PS3Includes.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\Rackspace.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakAlloca.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakAssert.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakMemoryOverride.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakNetCommandParser.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakNetDefines.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakNetDefinesOverrides.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakNetSmartPtr.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakNetSocket.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakNetStatistics.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakNetTime.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakNetTransport2.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakNetTypes.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakNetVersion.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakPeer.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakPeerInterface.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakSleep.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakString.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakThread.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RakWString.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\Rand.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\rdlmalloc-options.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\rdlmalloc.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\ReadyEvent.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RefCountedObj.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\ReliabilityLayer.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\ReplicaEnums.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\ReplicaManager3.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\Router2.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\RPC4Plugin.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\SecureHandshake.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\SendToThread.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\SHA1.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\SignaledEvent.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\SimpleMutex.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\SimpleTCPServer.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\SingleProducerConsumer.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\SocketDefines.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\SocketIncludes.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\SocketLayer.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\StringCompressor.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\StringTable.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\SuperFastHash.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\TableSerializer.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\TCPInterface.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\TeamBalancer.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\TelnetTransport.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\ThreadPool.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\ThreadsafePacketLogger.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\TransportInterface.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\TwoWayAuthentication.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\UDPForwarder.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\UDPProxyClient.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\UDPProxyCommon.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\UDPProxyCoordinator.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\UDPProxyServer.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\VariableDeltaSerializer.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\VariableListDeltaTracker.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\VariadicSQLParser.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\VitaIncludes.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\WindowsIncludes.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\WSAStartupSingleton.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\XBox360Includes.h" />
+    <ClInclude Include="..\lib_projects\raknet\jni\RaknetSources\_FindFirst.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\lib_projects\raknet\jni\RaknetSources\Makefile" />
+    <None Include="..\lib_projects\raknet\jni\RaknetSources\RakNet.vcproj" />
+    <None Include="..\lib_projects\raknet\jni\RaknetSources\RakNet_vc8.vcproj" />
+    <None Include="..\lib_projects\raknet\jni\RaknetSources\RakNet_vc9.vcproj" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{61D12CAD-CC16-4024-9C45-DE97AB0465AF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>MinecraftWin32</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Server|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Server|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Server|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug DEMO|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug DEMO|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug DEMO|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Server|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Server|ARM'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Server|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug DEMO|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug DEMO|ARM'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug DEMO|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\..\lib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\lib\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Server|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\..\lib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\lib\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\..\lib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\lib\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Server|ARM'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\..\lib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\lib\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\..\lib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\lib\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Server|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\..\lib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\lib\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug DEMO|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\..\lib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\lib\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug DEMO|ARM'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\..\lib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\lib\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug DEMO|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\..\lib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\lib\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>..\..\lib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\lib\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>..\..\lib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\lib\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>..\..\lib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\lib\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;_CONSOLE;STANDALONE_SERVER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libpng.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Server|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;_CONSOLE;STANDALONE_SERVER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libpng.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;_CONSOLE;STANDALONE_SERVER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libpng.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Server|ARM'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;_CONSOLE;STANDALONE_SERVER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libpng.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;_CONSOLE;STANDALONE_SERVER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libpng.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Server|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;_CONSOLE;STANDALONE_SERVER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libpng.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug DEMO|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>DEMO_MODE;OPENGL_ES;WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libEGL.lib;libGLES_CM.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libpng.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug DEMO|ARM'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>DEMO_MODE;OPENGL_ES;WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libEGL.lib;libGLES_CM.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libpng.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug DEMO|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>DEMO_MODE;OPENGL_ES;WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libEGL.lib;libGLES_CM.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libpng.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CONSOLE;STANDALONE_SERVER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libpng.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CONSOLE;STANDALONE_SERVER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libpng.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CONSOLE;STANDALONE_SERVER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libpng.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

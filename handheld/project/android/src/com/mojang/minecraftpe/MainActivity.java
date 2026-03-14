@@ -14,6 +14,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
 
+import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
+import android.provider.Settings;
+
 import com.mojang.android.StringValue;
 import com.mojang.android.licensing.LicenseCodes;
 
@@ -62,6 +67,24 @@ public class MainActivity extends NativeActivity {
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         super.onCreate(savedInstanceState);
         nativeRegisterThis();
+        requestManageStoragePermissionIfNeeded();
+    }
+
+    // Android 11+ (SDK 30) requires MANAGE_EXTERNAL_STORAGE for direct C file I/O.
+    // On Android 2.3 through 10 this method does nothing.
+    private void requestManageStoragePermissionIfNeeded() {
+        if (Build.VERSION.SDK_INT >= 30) {
+            if (!Environment.isExternalStorageManager()) {
+                try {
+                    Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                    intent.setData(Uri.parse("package:" + getPackageName()));
+                    startActivity(intent);
+                } catch (Exception e) {
+                    // Fallback: open generic all-files settings page
+                    startActivity(new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION));
+                }
+            }
+        }
     }
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
@@ -136,9 +159,19 @@ public class MainActivity extends NativeActivity {
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
-    	// TODO Auto-generated method stub
-    	//System.out.println("Focus has changed. Has Focus? " + hasFocus);
     	super.onWindowFocusChanged(hasFocus);
+    	
+    	if (hasFocus) {
+    		getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    		
+    		ViewGroup mainLayout = (ViewGroup) findViewById(android.R.id.content);
+    		if (mainLayout != null) {
+    			mainLayout.requestLayout();
+    		}
+    		
+    		Log.w("MCPE", "Window focus regained - resetting layout");
+    	}
     }
 
     @Override
@@ -358,7 +391,10 @@ public class MainActivity extends NativeActivity {
     	        MainActivity.this.mDialog.show();
     	        MainActivity.this.mDialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     	        MainActivity.this.mDialog.getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.MATCH_PARENT);
-    	        //MainActivity.this.getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
+    	        // Reset dialog window position to prevent shift after sleep/wake
+    	        MainActivity.this.mDialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+    	        MainActivity.this.mDialog.getWindow().setGravity(android.view.Gravity.TOP | android.view.Gravity.LEFT);
+    	        MainActivity.this.mDialog.getWindow().setAttributes(MainActivity.this.mDialog.getWindow().getAttributes());
     	    }
     	});
     }

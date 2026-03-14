@@ -105,6 +105,10 @@ void NinecraftApp::init()
 #else
 	storageSource = new MemoryLevelStorageSource();
 #endif
+
+	// Clean up any leftover _LastJoinedServer world folders from previous sessions
+	cleanupLastJoinedServerFolders();
+
 	_running = false;
 
 #ifndef STANDALONE_SERVER
@@ -129,12 +133,14 @@ void NinecraftApp::teardown()
 	TileEntity::teardownTileEntities();
 #endif
 #ifdef WIN32
+#ifndef STANDALONE_SERVER
 	ItemRenderer::teardown_static();
 	if (EntityTileRenderer::instance != NULL) {
 		delete EntityTileRenderer::instance;
 		EntityTileRenderer::instance = NULL;
 	}
 	TileEntityRenderDispatcher::destroy();
+#endif
 #endif
 }
 
